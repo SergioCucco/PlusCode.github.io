@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>+Code</title>
+    <link rel="icon" href="./assets/img/iconoCode.png">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- @@@ header section @@@ -->
+    <header class="container-fluid header">
+
+        <!-- nav bar-->
+        <nav id="nav" class="flex">
+            <div class="sm-nav">
+                <a href="./index.html" class="logo">
+                    <img src="/assets/img/logo.svg" alt="+Code">
+                </a>
+
+                <div class="toggle-btn">
+                    <i class="fas fa-bars menu-bars" id="menu-bars"></i>
+                </div>
+            </div>
+            <div class="nav-items flex-grow collapse">
+                <ul class="flex px-10">
+                    <li class="px-5 nav-item"><a href="./index.html#inicio" class="link  text-white">Inicio</a></li>
+                    <li class="px-5 nav-item"><a href="./empezar.html" class="link text-white">Empezar a aprender</a>
+                    </li>
+                    <li class="px-5 nav-item"><a href="./index.html#contact" class="link text-white">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="button-container flex px-5 flex-initial">
+                <button class="btn btn-secondary"><a href="./registro.html" class="link text-white">Iniciar
+                        sesión</a></button>
+                <button class="btn btn-primary"><a href="./registro.html" class="link">Comenzar</a></button>
+            </div>
+
+        </nav>
+        <!-- /nav bar -->
+        <!-- bg-nav fondo -->
+        <div class="bg-nav">
+            <div class="img-container">
+            </div>
+        </div>
+    </header>
+    <!-- @@@ /header section @@@ -->
+
+
+    <!-- main section -->
+    <main>
+        <div class="registrarse">
+            <div class="contenido">
+                <h2 class="title">Registrate a +Code</h2>
+
+                <div class="google-btn">
+                    <a href="#" class="google-button">
+
+                        <img src="./assets/img/google-logo.svg" alt="Google Logo" class="google-logo">
+
+                        <span class="button-text">Registrarse con Google</span>
+                    </a>
+
+                </div>
+                <hr class="divider">
+                <div class="sign-up">
+                    <form action="" id="form">
+
+                        <div class="form-field-group">
+                            <div class="form-field">
+                                <fieldset class="name"> 
+                                    <label for="name">Nombre:</label>
+                                    <input type="text" id="name" required>
+                                </fieldset>
+                            </div>
+
+                            <div class="form-field">
+                                <fieldset class="surname">
+                                    <label for="surname">Apellido:</label>
+                                    <input type="text" id="surname" required>
+                                </fieldset>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <fieldset class="email">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" required>
+                            </fieldset>
+                        </div>
+
+                        <div class="form-field">
+                            <fieldset class="password">
+                                <label for="password">Contraseña:</label>
+                                <input type="password" id="password" required>
+                            </fieldset>
+                        </div>
+
+                        <div class="form-field check-wrap">
+                            <fieldset>
+                                <input type="checkbox" id="aceptar" required>
+                                <label for="aceptar">Acepto los <a href="#">términos y condiciones</a></label>
+                            </fieldset>
+                        </div>
+
+                        <div class="button">
+                            <input type="submit" value="Crear cuenta" class="btn btn-primary-yellow">
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- img -->
+            <div class="img">
+                <figure>
+                    <img src="./assets/img/registro-img.svg" alt="Registrarse imagen">
+
+            </div>
+        </div>
+    </main>
+    <!-- /main section -->
+
+
+    <!-- scripts -->
+    <script src="https://kit.fontawesome.com/672d484dc8.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
