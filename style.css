@@ -34,17 +34,20 @@ html {
 }
 
 /* ---------- /Variables ---------- */
+/* Le saca la decoración de texto que viene por defecto */
 a {
     text-decoration: none;
 }
+/* Le asigna a un link un color de texto */
 .visited {
     color: var(--text-main-color);
 }
+/* Modifica valor por defecto al haber a un link ya visitado */
 .visited:visited {
     color: var(--text-main-color);
 }
 
-
+/* Mofica estilo por defecto de listas desordenadas */
 ul {
     list-style-type: none;
 }
@@ -53,137 +56,104 @@ ul {
 /* ---------- Global Classes ---------- */
 
 
-.text-sm {
-    font-size: 1 rem;
-}
 
-
-.text-md {
-    font-size: 1.5rem;
-}
-
-.text-lg {
-    font-size: 2.2rem;
-}
-
+/* Clase para asignar color de texto según lo guardado en la variable primary-color */
 .text-dark {
     color: var(--primary-color);
 }
 
+/* Asigna color texto según lo guardado en la variable text-white-color */
 .text-white {
     color: var(--text-white-color);
 }
 
+/* Alinea el texto al centro */
 .text-center {
     text-align: center;
 }
 
+/* Modifica peso de la fuente */
 .font-bold {
     font-weight: bold;
 }
 
-
+/* Asigna ancho al 100% para pantallas < 640px, modifica su valor según media query */
 .container {
     width: 100%;
 }
 
-.container-fluid {
-    width: 100%;
-}
-
-
+/* Asigna display flex */
 .flex {
     display: flex;
 }
-
-.flex-row {
-    flex-direction: row;
-}
-
+/* Coloca los elementos uno debajo del otro */
 .flex-column {
     flex-direction: column;
 }
 
-.flex-warp {
-    flex-wrap: wrap;
-}
-
+/* Convierte al tamaño elemento en flexible, puede encojerse pero no crece más del tamaño inicial */
 .flex-initial {
     flex: 0 1 auto;
 }
 
+/* Elemento no puede crecer aún si hay espacio disponible */
 .flex-grow {
     flex-grow: 1;
 }
 
-
+/* Centrar en el eje x un elemento según el contenedor */
 .mx-auto {
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Agrega padding en el eje y */
 .py-2 {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
-.py-5 {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-}
-
+/* Agrega padding en el eje y */
 .py-10 {
     padding-top: 4.5rem;
     padding-bottom: 4.5rem;
 }
 
+/* Agrega padding en el eje x */
 .px-2 {
     padding-right: 1rem;
     padding-left: 1rem;
 }
 
+/* Agrega padding en el eje x */
 .px-5 {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
 }
 
+/* Agrega padding en el eje x */
 .px-10 {
     padding-right: 4.5rem;
     padding-left: 4.5rem;
 }
 
-.d-inline {
-    display: inline-block;
-}
-
-.d-block {
-    display: block;
-}
-
+/* Asigna display grid a un elemento */
 .grid {
     display: grid;
 }
 
-.cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
+/* Crea dos columnas con un tamaño mínimo y se expande espacio disponible etiquetativamente  */
 .cols-2 {
     grid-template-columns: repeat(2, minmax(100px, 1fr));
 }
 
+/* Crea tres columnas con un tamaño mínimo y se expande espacio disponible etiquetativamente */
 .cols-3 {
     grid-template-columns: repeat(3, minmax(100px, 1fr));
 }
 
-.w-100 {
-    width: 100%;
-}
 
-.w-50 {
-    width: 60%;
-}
-
+/* Reinicia valor de un botón y le asigna propiedades generales */
 .btn {
     border: none;
     cursor: pointer;
@@ -191,11 +161,12 @@ ul {
     font-size: 1rem;
 
 }
-
+/* Comportamiento hover para botón */
 .btn:hover {
     letter-spacing: .1rem;
 }
 
+/* Boton principal con diseño version 1, usar para botones con peso visual */
 .btn-primary {
     background: var(--white-color);
     border-radius: 24px;
@@ -206,13 +177,14 @@ ul {
     background: var(--yellow-color);
 
 }
-
+/* Boton principal versión 2, usar para botones con MUCHO peso visual */
 .btn-primary-yellow {
     background: var(--yellow-color);
     border-radius: 24px;
     padding: .8rem 2rem;
 }
 
+/* Boton secundario, usar para botones sin enfásis visual */
 .btn-secondary {
     background-color: transparent;
     color: var(--white-color);
@@ -223,12 +195,9 @@ ul {
 
 /* ---------- Navigation Style ---------- */
 
-/* .nav-container {
-    width: 100%;
-    justify-content: space-between;
-} */
 .header {
     position: relative;
+    width: 100%;
 }
 
 #nav {
@@ -1284,6 +1253,7 @@ color: var(--text-subtle-color);
         /* background-color: cyan; */
     }
 
+
     .sm-text-xl {
         font-size: 3em;
     }
@@ -1292,15 +1262,17 @@ color: var(--text-subtle-color);
 
 /* Large Screen md(768px) Todo lo que aplique acá se aplicará cuando el VP > 768px*/
 @media (min-width: 768px) {
+    /* Ancho máximo cuando pantalla > 768px */
     .container {
         max-width: 768px;
         /* background-color: #E58D5C; */
     }
 
+    /* Alineación de texto izquierdo cuando pantallas >768px */
     .md-text-left {
         text-align: left;
     }
-
+    /* Cuadricula de dos columnas para cuando la pantalla es > 768px */
     .lg-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -1477,6 +1449,7 @@ color: var(--text-subtle-color);
 
 /* Large Screen lg(1024px) Todo lo que aplique acá se aplicará cuando el VP > 1024px*/
 @media (min-width: 1024px) {
+    /* Ancho máximo cuando pantalla > 1024px */
     .container {
         max-width: 1024px;
         /* background-color: #A0D2EB; */
@@ -1570,6 +1543,7 @@ color: var(--text-subtle-color);
 
 /* Large Screen xl(1280px) Todo lo que aplique acá se aplicará cuando el VP > 1280px*/
 @media (min-width: 1280px) {
+    /* Ancho máximo cuando pantalla > 1280px */
     .container {
         max-width: 1280px;
         /* background-color: #F8E54B; */
