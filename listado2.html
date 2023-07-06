@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de cursos</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    <!-- @@@ header section @@@ -->
+    <header class="header">
+
+        <!-- nav bar-->
+        <nav id="nav" class="flex">
+            <div class="sm-nav">
+                <a href="#" class="logo">
+                    <img src="/assets/img/logo.svg" alt="+Code">
+                </a>
+
+                <div class="toggle-btn">
+                    <i class="fas fa-bars menu-bars" id="menu-bars"></i>
+                </div>
+            </div>
+            <div class="nav-items flex-grow collapse">
+                <ul class="flex px-10">
+                    <li class="px-5 nav-item"><a href="./index.html#hero" class="text-white">Inicio</a></li>
+                    <li class="px-5 nav-item"><a href="./empezar.html" class="text-white">Empezar a aprender</a>
+                    </li>
+                    <li class="px-5 nav-item"><a href="./index.html#contact" class="text-white">Contacto</a></li>
+                    <li class="px-5 nav-item"><a href="./listado2.html" class="text-white">Cursos</a></li>
+                </ul>
+            </div>
+
+            <div class="button-container flex px-5 flex-initial">
+                <button class="btn btn-secondary"><a href="./registro.html" class="text-white">Iniciar
+                        sesión</a></button>
+                <button class="btn btn-primary"><a href="./registro.html" class="visited">Comenzar</a></button>
+            </div>
+
+        </nav>
+        <!-- /nav bar -->
+        <!-- bg-nav fondo -->
+        <div class="bg-nav">
+            <div class="img-container">
+            </div>
+        </div>
+    </header>
+
+    
+    <div class="center">
+        <h1 class="cursos-headline">Cursos</h1>
+        <div class="grid-container" id="cursos-contenedor">
+            <div v-for="curso in cursos" class="card">
+                <img :src="curso.imagen_ruta" class="img_curso" :alt="'Imagen del curso ' + curso.codigo">
+                <!-- <p>Código: {{ curso.codigo }}</p> -->
+                <p class="cupos_curso">{{ curso.cupos }} cupos disponibles</p>
+                <p class="nombre_curso">{{ curso.nombre }}</p>
+                <p class="duracion_curso"><i class="fa-regular fa-clock"></i></i> Duración: <span>{{ curso.duracion }}
+                        meses</span></p>
+                <hr class="card-divisor">
+                <div class="card_footer">
+                    <p class="precio_curso">${{ new Intl.NumberFormat('es-AR').format(curso.precio) }}</p>
+                    <a href="./carrito.html" class="carrito_icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="admin-btn-contenedor">
+            <a href="panelControl.html" class="admin-btn">Panel de control</a>
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <footer id="footer">
+        <div class="footer-wrapper">
+            <div class="principal">
+                <a href="#" class="font-bold px-5 logo">
+                    <img src="./assets/img/logo.svg" alt="logo">
+                </a>
+
+                <div class="footer-nav">
+                    <ul class="items">
+                        <li class="item"><a href="./index.html#">Inicio</a></li>
+                        <li class="item"><a href="./empezar.html">Empezar a aprender</a></li>
+                        <li class="item"><a href="./index.html#contact">Contacto</a></li>
+                        <li class="item"><a href="./index.html#inicio">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-icons">
+                    <i class="fa-brands fa-twitter icon"></i>
+                    <i class="fa-brands fa-tiktok icon"></i>
+                    <i class="fa-brands fa-youtube icon"></i>
+                </div>
+            </div>
+
+            <div class="secundario">
+                <hr>
+                <p>&copy 2023 +Code</p>
+            </div>
+
+        </div>
+    </footer>
+    <!-- /footer section -->
+
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    cursos: []
+                }
+            },
+            mounted() {
+                const URL = "https://melapaza.pythonanywhere.com/"
+
+                fetch(URL + 'cursos')
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json()
+                        } else {
+                            throw new Error('Error al obtener los cursos.')
+                        }
+                    })
+                    .then(data => {
+                        this.cursos = data
+                    })
+                    .catch(error => {
+                        console.log('Error:', error)
+                        alert('Error al obtener los cursos.')
+                    })
+            }
+        })
+
+        app.mount('#cursos-contenedor')
+    </script>
+</body>
+
+</html>

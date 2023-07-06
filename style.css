@@ -34,14 +34,19 @@ html {
 }
 
 /* ---------- /Variables ---------- */
+body {
+    background-color: var(--cream-color)
+}
 /* Le saca la decoración de texto que viene por defecto */
 a {
     text-decoration: none;
 }
+
 /* Le asigna a un link un color de texto */
 .visited {
     color: var(--text-main-color);
 }
+
 /* Modifica valor por defecto al haber a un link ya visitado */
 .visited:visited {
     color: var(--text-main-color);
@@ -86,6 +91,7 @@ ul {
 .flex {
     display: flex;
 }
+
 /* Coloca los elementos uno debajo del otro */
 .flex-column {
     flex-direction: column;
@@ -161,6 +167,7 @@ ul {
     font-size: 1rem;
 
 }
+
 /* Comportamiento hover para botón */
 .btn:hover {
     letter-spacing: .1rem;
@@ -177,6 +184,7 @@ ul {
     background: var(--yellow-color);
 
 }
+
 /* Boton principal versión 2, usar para botones con MUCHO peso visual */
 .btn-primary-yellow {
     background: var(--yellow-color);
@@ -242,7 +250,7 @@ ul {
     vertical-align: middle;
     width: 108px;
     height: auto;
-    
+
 }
 
 #nav .toggle-btn #menu-bars {
@@ -376,7 +384,6 @@ main #feature {
 }
 
 main #feature .feature-info {
-    background-color: #ffffff;
     padding-bottom: 1rem;
 }
 
@@ -689,15 +696,17 @@ main #feature .feature-cards .card .card-text {
     font-size: 1.5em;
 }
 
-.kpi-item-text-t{
+.kpi-item-text-t {
     color: var(--cream-color);
     font-weight: bold;
     font-size: 1.2rem;
 }
+
 .img-fluid-rounded-circle {
     border-radius: 50%;
     width: 200px;
 }
+
 #kpi .api-container button {
     margin-bottom: 1.5rem;
 }
@@ -773,6 +782,7 @@ main #feature .feature-cards .card .card-text {
     margin: 5rem 0;
     padding-top: 2rem;
 }
+
 .contact-title {
     font-size: 2.5rem;
     color: var(--text-main-color);
@@ -840,9 +850,9 @@ main #feature .feature-cards .card .card-text {
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 9999;
-  }
-  
-  .flotante button {
+}
+
+.flotante button {
     position: absolute;
     padding: .5rem .7rem;
     top: 10px;
@@ -852,10 +862,11 @@ main #feature .feature-cards .card .card-text {
     background-color: var(--text-main-color);
     color: var(--cream-color);
     cursor: pointer;
-  }
-  .flotante button:hover {
+}
+
+.flotante button:hover {
     background-color: var(--text-light-color);
-  }
+}
 
 #contact .mapa {
     position: relative;
@@ -863,9 +874,11 @@ main #feature .feature-cards .card .card-text {
     height: 0;
     overflow: hidden;
 }
+
 #contact .mapa iframe {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
@@ -878,12 +891,13 @@ main #feature .feature-cards .card .card-text {
     background-color: #513370;
     margin-top: 5rem;
 }
+
 .footer-wrapper .principal .logo {
     display: inline-block;
     vertical-align: middle;
     width: 108px;
     height: auto;
-    
+
 }
 
 .footer-wrapper .principal {
@@ -1113,13 +1127,14 @@ textarea {
 
     color: var(--dark-primary-color);
 }
+
 .hero-title-new-sid .violeta {
     color: var(--primary-color);
 }
 
 .grid-emp {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     margin: 4rem 0;
 }
 
@@ -1131,7 +1146,7 @@ textarea {
 
 .cont-emp4 {
     display: grid;
-    grid-template-rows:40% 37.5% 12.5% ;
+    grid-template-rows: 40% 37.5% 12.5%;
     row-gap: 0.2rem;
 }
 
@@ -1150,19 +1165,19 @@ textarea {
 
 
 .emp-subtitle {
-font-size: 1.8rem;
-font-family: 'Nunito';
-font-style: normal;
-font-weight: 400;
-font-size: 48px;
-line-height: 52px;
-letter-spacing: 0.005em;
-color: var(--dark-primary-color);
+    font-size: 1.8rem;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: 0.005em;
+    color: var(--dark-primary-color);
 }
 
 .emp-p {
-font-size: 1rem;
-color: var(--text-subtle-color);
+    font-size: 1rem;
+    color: var(--text-subtle-color);
 }
 
 .emp-p2 {
@@ -1170,11 +1185,11 @@ color: var(--text-subtle-color);
     color: #353535;
     font-family: 'Nunito';
     font-style: normal;
-    }
+}
 
 .cont2 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 /*comenzamos con las cards*/
@@ -1262,6 +1277,7 @@ color: var(--text-subtle-color);
 
 /* Large Screen md(768px) Todo lo que aplique acá se aplicará cuando el VP > 768px*/
 @media (min-width: 768px) {
+
     /* Ancho máximo cuando pantalla > 768px */
     .container {
         max-width: 768px;
@@ -1272,6 +1288,7 @@ color: var(--text-subtle-color);
     .md-text-left {
         text-align: left;
     }
+
     /* Cuadricula de dos columnas para cuando la pantalla es > 768px */
     .lg-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1420,12 +1437,14 @@ color: var(--text-subtle-color);
         justify-content: flex-start;
         max-width: 550px;
     }
+
     .contenido {
         padding: 5rem;
         flex: 1;
         max-width: 50vw;
         text-align: left;
     }
+
     .form-field-group {
         justify-content: flex-start;
         width: 100%;
@@ -1447,8 +1466,456 @@ color: var(--text-subtle-color);
 
 }
 
+/* @@@@ Estilos nuevos @@@@@ */
+
+.form-title {
+    margin-inline-start: 8px;
+    margin-block-end: 1rem;
+    color: var(--dark-primary-color);
+    font-weight: 800;
+}
+
+.form-btn-contenedor {
+    align-self: flex-end;
+}
+
+.form-btn {
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    border: none;
+    color: var(--dark-primary-color);
+    background-color: var(--yellow-color);
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-btn:hover {
+    transform: scale(98%);
+    background-color: #f8e766d8;
+}
+
+.form-btn-cancel {
+    padding: .9rem 2rem;
+    border-radius: .5rem;
+    margin-inline-start: .5rem;
+    border: none;
+    color: var(--text-white-color);
+    background-color: rgb(228, 68, 68);
+    font-size: .9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-btn-cancel:hover {
+    background-color: rgba(228, 68, 68, 0.795);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+    transform: scale(98%);
+}
+
+abel {
+    display: block;
+    margin-block-end: 8px;
+    margin-inline-start: 8px;
+    font-weight: 800;
+    color: var(--text-subtle-color);
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: .8rem;
+    margin-bottom: 10px;
+    border: 1px solid var(--text-light-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+
+}
+
+.img-listado {
+    width: 50px;
+    height: 50px;
+}
+
+.center {
+    width: 50%;
+    margin: 0 auto;
+    /* background-color: #0056b3; */
+}
+
+/* cursos page  */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, .8);
+    box-shadow: 0 0 16px rgba(0, 0, 0, .3);
+    border-radius: 1rem;
+    padding: 2rem 1.7rem;
+}
+
+.img_curso {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.admin-btn-contenedor {
+    float: right;
+    margin-inline-end: 1rem;
+    margin-block-end: 2rem;
+}
+
+.admin-btn {
+    text-decoration: none;
+    color: var(--text-white-color);
+    background-color: var(--text-light-color);
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+}
+
+.admin-btn:hover {
+    transform: scale(98%);
+    background-color: #a8a8a893;
+}
+
+.cursos-headline {
+    color: var(--dark-primary-color);
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+    margin-block: 1rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.nombre_curso {
+    font-size: 1.4rem;
+    padding-block: .5rem;
+    font-weight: 900;
+    color: var(--dark-primary-color);
+}
+
+.cupos_curso {
+    display: inline-block;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--text-main-color);
+    letter-spacing: .1rem;
+    background: rgb(102, 218, 127);
+    background-color: var(--dark-primary-color);
+    color: var(--text-white-color);
+    box-shadow: 0 0 2px rgba(0, 0, 0, .1);
+    padding: 0.3rem 1rem;
+    margin-block-start: .5rem;
+    /* margin-inline-start: .2rem; */
+    border-radius: .4rem;
+    transform: scale(95%);
+}
+
+.duracion_curso {
+    color: var(--text-subtle-color);
+}
+
+.card-divisor {
+    margin-block: 1rem;
+    border: 1px solid var(--text-light-color);
+}
+
+.duracion_curso span {
+    font-weight: 600;
+    color: var(--text-main-color);
+}
+
+.card_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.precio_curso {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.carrito_icon {
+    background: var(--yellow-color);
+    color: var(--text-main-color);
+    border-radius: 4px;
+    padding: .8rem;
+    font-size: 1rem;
+    line-height: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 1s ease-in;
+}
+
+.carrito_icon:hover {
+    transform: scale(98%);
+    background-color: #fde73f;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+
+}
+
+/* /cursos page  */
+
+
+/* carrito page  */
+.carrito-contenedor {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.carrito-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: 2rem;
+    background: rgba(255, 255, 255, .5);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    border-radius: 1rem;
+    padding: 2rem 1.7rem;
+}
+
+.card-info {
+    margin-inline: 1.5rem;
+}
+
+.volver-btn {
+    background-color: var(--text-light-color);
+    color: var(--text-white-color);
+    font-size: 10px;
+    padding: .6rem 1rem;
+    text-decoration: none;
+    border-radius: .5rem;
+}
+
+.volver-btn:hover {
+    transform: scale(98%);
+    background-color: #a8a8a893;
+}
+
+.carrito-btn {
+    background-color: var(--yellow-color);
+    color: var(--text-main-color);
+    font-weight: 700;
+    padding: .9rem 2rem;
+    line-height: .8rem;
+    color: var(--dark-primary-color);
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.carrito-quitar-btn i,
+.carrito-btn i {
+    margin-inline-end: .3rem;
+}
+
+.carrito-quitar-btn {
+    color: var(--text-white-color);
+    background-color: rgb(228, 68, 68);
+    font-weight: 700;
+    padding: .9rem 2rem;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+
+}
+
+.carrito-quitar-btn:hover {
+    background-color: rgba(228, 68, 68, 0.795);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+    transform: scale(98%);
+}
+
+.carrito-btn:hover {
+    background-color: #f8e766d8;
+    ;
+    transform: scale(98%);
+}
+
+.text-accent {
+    font-weight: 800;
+}
+
+.card-info-nombre {
+    font-size: 1.1rem;
+    color: #513370;
+    flex: 1;
+}
+
+.card-info-precio {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+}
+
+.carrito-grid {
+    background-color: var(--cream-color);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    margin-block: 2rem;
+}
+
+.mostrar-carrito-headline {
+    text-align: left;
+    color: var(--dark-primary-color);
+    font-size: 2rem;
+    padding: 0 1.5rem;
+}
+
+.mostrar-carrito-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem 1rem;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    align-items: center;
+    background: rgba(255, 255, 255, .5);
+}
+
+.mostrar-carrito-nombre {
+    flex: 1;
+    color: var(--dark-primary-color);
+    font-size: 1.1rem;
+}
+
+.mostrar-carrito-codigo {
+    color: var(--text-subtle-color);
+    font-weight: 600;
+
+}
+
+/* /carrito page  */
+
+/* panel de control page  */
+
+.panel-control-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-block-start: 2rem;
+}
+
+.panel-control-headline {
+    margin-inline-start: 2rem;
+    margin-block: 2rem;
+    color: var(--dark-primary-color);
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.panel-control-item:hover {
+    transform: scale(90%);
+    background-color: var(--yellow-color);
+    /* color: var(--dark-primary-color); */
+}
+
+.panel-control-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 500px;
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    margin: 2rem;
+    border-radius: 1rem;
+}
+
+.panel-control-icon {
+    font-size: 2rem;
+}
+
+.panel-control-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+
+}
+
+/* /panel de control page  */
+
+/* agregar cursos page  */
+
+.panel-items-contenedor {
+    /* background-color: #0056b3; */
+    margin: 0 auto;
+    width: 60%;
+    padding-block: 1rem;
+}
+
+.headline-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* /agregar cursos page  */
+
+/* eliminar cursos page  */
+
+.eliminar-curso-contenedor {
+    background: rgba(255, 255, 255, .5);
+    width: 100%;
+    padding: 1rem 3rem;
+    margin-block: 2rem;
+    text-align: left;
+
+    border-radius: 1rem;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.eliminar-curso-contenedor th,
+.eliminar-curso-contenedor td {
+    border-bottom: 1px solid var(--text-light-color);
+    padding: 1rem 2rem;
+}
+
+.eliminar-curso-contenedor td {
+    color: var(--dark-primary-color);
+}
+
+/* /eliminar cursos page  */
+
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
+}
+
+/* @@@@ /Estilos nuevos @@@@@ */
+
+
+
+
+
+
+
 /* Large Screen lg(1024px) Todo lo que aplique acá se aplicará cuando el VP > 1024px*/
 @media (min-width: 1024px) {
+
     /* Ancho máximo cuando pantalla > 1024px */
     .container {
         max-width: 1024px;
@@ -1543,6 +2010,7 @@ color: var(--text-subtle-color);
 
 /* Large Screen xl(1280px) Todo lo que aplique acá se aplicará cuando el VP > 1280px*/
 @media (min-width: 1280px) {
+
     /* Ancho máximo cuando pantalla > 1280px */
     .container {
         max-width: 1280px;

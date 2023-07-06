@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo uso de la API</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- @@@ header section @@@ -->
+    <header class="header">
+
+        <!-- nav bar-->
+        <nav id="nav" class="flex">
+            <div class="sm-nav">
+                <a href="#" class="logo">
+                    <img src="/assets/img/logo.svg" alt="+Code">
+                </a>
+
+                <div class="toggle-btn">
+                    <i class="fas fa-bars menu-bars" id="menu-bars"></i>
+                </div>
+            </div>
+            <div class="nav-items flex-grow collapse">
+                <ul class="flex px-10">
+                    <li class="px-5 nav-item"><a href="#hero" class="text-white">Inicio</a></li>
+                    <li class="px-5 nav-item"><a href="./empezar.html" class="text-white">Empezar a aprender</a>
+                    </li>
+                    <li class="px-5 nav-item"><a href="#contact" class="text-white">Contacto</a></li>
+                    <li class="px-5 nav-item"><a href="./listado2.html" class="text-white">Cursos</a></li>
+                </ul>
+            </div>
+
+            <div class="button-container flex px-5 flex-initial">
+                <button class="btn btn-secondary"><a href="./registro.html" class="text-white">Iniciar
+                        sesión</a></button>
+                <button class="btn btn-primary"><a href="./registro.html" class="visited">Comenzar</a></button>
+            </div>
+
+        </nav>
+        <!-- /nav bar -->
+        <!-- bg-nav fondo -->
+        <div class="bg-nav">
+            <div class="img-container">
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="panel-control-contenedor">
+        <h1 class="panel-control-headline">Panel de control</h1>
+        <div class="panel-control-items">
+            <hr class="">
+
+            <a href="altas.html" class="visited panel-control-link">
+                <div class="panel-control-item">
+                    <i class="fa-solid fa-circle-plus panel-control-icon"></i>
+                    <div>
+                        <p class="panel-control-title">Agregar cursos</p>
+                        <p class="panel-control-info">Aquí podrás agregar un curso a la base de datos</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="modificaciones.html" class="visited panel-control-link">
+                <div class="panel-control-item">
+                    <i class="fa-solid fa-right-left panel-control-icon"></i>
+                    <div>
+                        <p class="panel-control-title">Modificar datos</p>
+                        <p class="panel-control-info">Ingresá el código del curso y modificá sus datos</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="listadoEliminar.html" class="visited panel-control-link">
+                <div class="panel-control-item">
+                    <i class="fa-solid fa-trash-can panel-control-icon"></i>
+                    <div>
+                        <p class="panel-control-title">Eliminar curso</p>
+                        <p class="panel-control-info">Podrás modificar los datos del curso</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="listado2.html" class="visited panel-control-link">
+                <div class="panel-control-item">
+                    <i class="fa-solid fa-eye panel-control-icon"></i>
+                    <div>
+                        <p class="panel-control-title">Ver cursos</p>
+                        <p class="panel-control-info">Observá los cambios reflejados en los cursos</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <footer id="footer">
+        <div class="footer-wrapper">
+            <div class="principal">
+                <a href="#" class="font-bold px-5 logo">
+                    <img src="./assets/img/logo.svg" alt="logo">
+                </a>
+
+                <div class="footer-nav">
+                    <ul class="items">
+                        <li class="item"><a href="./index.html#">Inicio</a></li>
+                        <li class="item"><a href="./empezar.html">Empezar a aprender</a></li>
+                        <li class="item"><a href="./index.html#contact">Contacto</a></li>
+                        <li class="item"><a href="./index.html#inicio">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-icons">
+                    <i class="fa-brands fa-twitter icon"></i>
+                    <i class="fa-brands fa-tiktok icon"></i>
+                    <i class="fa-brands fa-youtube icon"></i>
+                </div>
+            </div>
+
+            <div class="secundario">
+                <hr>
+                <p>&copy 2023 +Code</p>
+            </div>
+
+        </div>
+    </footer>
+    <!-- /footer section -->
+</body>
+
+</html>

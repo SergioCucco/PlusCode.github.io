@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de compras</title>
+  <script src="https://unpkg.com/vue@next"></script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- @@@ header section @@@ -->
+  <header class="header">
+
+    <!-- nav bar-->
+    <nav id="nav" class="flex">
+      <div class="sm-nav">
+        <a href="#" class="logo">
+          <img src="/assets/img/logo.svg" alt="+Code">
+        </a>
+
+        <div class="toggle-btn">
+          <i class="fas fa-bars menu-bars" id="menu-bars"></i>
+        </div>
+      </div>
+      <div class="nav-items flex-grow collapse">
+        <ul class="flex px-10">
+          <li class="px-5 nav-item"><a href="./index.html#hero" class="text-white">Inicio</a></li>
+          <li class="px-5 nav-item"><a href="./empezar.html" class="text-white">Empezar a aprender</a>
+          </li>
+          <li class="px-5 nav-item"><a href="./index.html#contact" class="text-white">Contacto</a></li>
+          <li class="px-5 nav-item"><a href="./listado2.html" class="text-white">Cursos</a></li>
+        </ul>
+      </div>
+
+      <div class="button-container flex px-5 flex-initial">
+        <button class="btn btn-secondary"><a href="./registro.html" class="text-white">Iniciar
+            sesión</a></button>
+        <button class="btn btn-primary"><a href="./registro.html" class="visited">Comenzar</a></button>
+      </div>
+
+    </nav>
+    <!-- /nav bar -->
+    <!-- bg-nav fondo -->
+    <div class="bg-nav">
+      <div class="img-container">
+      </div>
+    </div>
+  </header>
+
+
+
+  <div id="app" class="carrito-contenedor">
+    <!-- <div class="admin-btn-contenedor">
+      <a href="panelControl.html" class="admin-btn">Panel de control</a>
+    </div>
+
+
+    <h1 class="cursos-headline">Carrito de compras</h1> -->
+
+
+    <div class="headline-contenedor">
+      <h1 class="panel-control-headline">Agregá cursos a tu carrito</h1>
+      <div class="admin-btn-contenedor">
+
+        <button @click="obtenerCarrito" class="carrito_icon"><i class="fa-solid fa-cart-shopping"></i></button>
+      </div>
+    </div>
+
+
+    <div>
+      <div v-for="curso in cursos" :key="curso.codigo" class="carrito-card">
+        <img :src="curso.imagen_ruta" alt="Imagen del curso" class="img-listado">
+        <p class="card-info">Cod: {{ curso.codigo }}</p>
+        <p class="card-info text-accent card-info-nombre">{{ curso.nombre }}</p>
+        <p class="card-info">Cupos: <span class="text-accent ">{{ curso.cupos }}</span></p>
+        <p class="card-info">Duración: <span class="text-accent">{{ curso.duracion }} meses</span></p>
+        <p class="card-info text-accent card-info-precio">${{ curso.precio }}</p>
+        <div class="card-buttons">
+          <button @click="agregarAlCarrito(curso)" class="carrito-btn"><i class="fa-solid fa-plus"></i> Agregar</button>
+        </div>
+      </div>
+    </div>
+    <div v-if="mostrarCarrito" class="mostrar-carrito">
+      <hr class="card-divisor">
+
+      <div class="carrito-grid">
+        <h3 class="mostrar-carrito-headline">Tu carrito</h3>
+        <div v-for="item in carrito" :key="item.codigo" class="mostrar-carrito-card">
+          <p class="mostrar-carrito-codigo">{{ item.codigo }}</p>
+          <p class="text-accent mostrar-carrito-nombre">{{ item.nombre }}</p>
+          <p class="card-info-precio text-accent ">&nbsp;&nbsp;${{ item.precio }}</p>
+          <button @click="restarDelCarrito(item)" class="carrito-quitar-btn">Eliminar</button>
+        </div>
+        <!-- <div class="mostrar-carrito-card">
+          <p class="text-accent">Total:</p>
+        </div> -->
+      </div>
+    </div>
+
+    <div v-if="!mostrarCarrito" class="contenedor-centrado">
+      <button @click="obtenerCarrito" class="carrito-btn visited">Mostrar carrito</button>
+    </div>
+
+    <div class="admin-btn-contenedor">
+      <a href="listado2.html" class="volver-btn">Volver a cursos</a>
+    </div>
+    <!-- <div class="contenedor-centrado">
+      <a href="index.html">Menu principal</a>
+    </div> -->
+
+  </div>
+
+
+  <!-- footer section -->
+  <footer id="footer">
+    <div class="footer-wrapper">
+      <div class="principal">
+        <a href="#" class="font-bold px-5 logo">
+          <img src="./assets/img/logo.svg" alt="logo">
+        </a>
+
+        <div class="footer-nav">
+          <ul class="items">
+            <li class="item"><a href="./index.html#">Inicio</a></li>
+            <li class="item"><a href="./empezar.html">Empezar a aprender</a></li>
+            <li class="item"><a href="./index.html#contact">Contacto</a></li>
+            <li class="item"><a href="./index.html#inicio">Términos y condiciones</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-icons">
+          <i class="fa-brands fa-twitter icon"></i>
+          <i class="fa-brands fa-tiktok icon"></i>
+          <i class="fa-brands fa-youtube icon"></i>
+        </div>
+      </div>
+
+      <div class="secundario">
+        <hr>
+        <p>&copy 2023 +Code</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    //const URL = "http://127.0.0.1:5000/"
+    const URL = "https://melapaza.pythonanywhere.com/"
+
+    const app = Vue.createApp({
+      data() {
+        return {
+          cursos: [],
+          carrito: [],
+          mostrarCarrito: false,
+        }
+      },
+      created() {
+        this.obtenerCursos()
+      },
+      methods: {
+        obtenerCursos() {
+          fetch(URL + 'cursos')
+            .then(response => response.json())
+            .then(data => {
+              this.cursos = data.map(curso => {
+                curso.imagen_ruta = curso.imagen_ruta;
+                curso.precio = new Intl.NumberFormat('es-AR').format(curso.precio);
+                return curso
+              })
+            })
+            .catch(error => {
+              console.error(URL + 'cursos', error)
+              alert('Error al obtener los cursos.')
+            })
+        },
+        agregarAlCarrito(curso) {
+          if (this.carrito.some(item => item.codigo === curso.codigo)) {
+            alert('El curso ya está en el carrito.');
+            return;
+          }
+          fetch(URL + 'carrito', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              codigo: curso.codigo,
+              cupos: 1, // Agregamos una unidad al carrito
+            }),
+          })
+            .then(response => response.json())
+            .then(data => {
+              alert(data.message)
+              // Actualizar el carrito local
+              this.carrito.push(curso);
+            })
+            .catch(error => {
+              console.error('Error al agregar el producto al carrito:', error)
+              alert('Error al agregar el producto al carrito.')
+            })
+        },
+        restarDelCarrito(item) {
+          fetch(URL + 'carrito', {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              codigo: item.codigo,
+              cupos: 1, // Restamos una unidad del carrito
+            }),
+          })
+            .then(response => response.json())
+            .then(data => {
+              alert(data.message)
+              // Actualizar el carrito local
+              const index = this.carrito.findIndex(curso => curso.codigo === item.codigo);
+              if (index > -1) {
+                this.carrito.splice(index, 1);
+              }
+            })
+            .catch(error => {
+              console.error('Error al restar el producto del carrito:', error)
+              alert('Error al restar el producto del carrito.')
+            })
+        },
+
+        obtenerCarrito() {
+          fetch(URL + 'carrito')
+            .then(response => response.json())
+            .then(data => {
+              this.carrito = data
+              this.mostrarCarrito = true
+              this.carrito = data.map(curso => {
+                console.log(curso)
+                curso.precio = new Intl.NumberFormat('es-AR').format(curso.precio);
+                // curso.imagen_ruta = curso.imagen_ruta;
+                return curso;
+              });
+            })
+            .catch(error => {
+              console.error('Error al obtener el carrito:', error)
+              // alert('Error al obtener el carrito.')
+            })
+        },
+      },
+    })
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
