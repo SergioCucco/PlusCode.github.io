@@ -1,206 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modificar Curso</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <!-- stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<body>
+  <body>
     <!-- @@@ header section @@@ -->
     <header class="header">
+      <!-- nav bar-->
+      <nav id="nav" class="flex">
+        <div class="sm-nav">
+          <a href="#" class="logo">
+            <img src="./assets/img/logo.svg" alt="+Code" />
+          </a>
 
-        <!-- nav bar-->
-        <nav id="nav" class="flex">
-            <div class="sm-nav">
-                <a href="#" class="logo">
-                    <img src="/assets/img/logo.svg" alt="+Code">
-                </a>
-
-                <div class="toggle-btn">
-                    <i class="fas fa-bars menu-bars" id="menu-bars"></i>
-                </div>
-            </div>
-            <div class="nav-items flex-grow collapse">
-                <ul class="flex px-10">
-                    <li class="px-5 nav-item"><a href="#hero" class="text-white">Inicio</a></li>
-                    <li class="px-5 nav-item"><a href="./empezar.html" class="text-white">Empezar a aprender</a>
-                    </li>
-                    <li class="px-5 nav-item"><a href="./index.html#contact" class="text-white">Contacto</a></li>
-                    <li class="px-5 nav-item"><a href="./listado2.html" class="text-white">Cursos</a></li>
-                </ul>
-            </div>
-
-            <div class="button-container flex px-5 flex-initial">
-                <button class="btn btn-secondary"><a href="./registro.html" class="text-white">Iniciar
-                        sesión</a></button>
-                <button class="btn btn-primary"><a href="./registro.html" class="visited">Comenzar</a></button>
-            </div>
-
-        </nav>
-        <!-- /nav bar -->
-        <!-- bg-nav fondo -->
-        <div class="bg-nav">
-            <div class="img-container">
-            </div>
+          <div class="toggle-btn">
+            <i class="fas fa-bars menu-bars" id="menu-bars"></i>
+          </div>
         </div>
+        <div class="nav-items flex-grow collapse">
+          <ul class="flex px-10">
+            <li class="px-5 nav-item">
+              <a href="./index.html#hero" class="text-white">Inicio</a>
+            </li>
+            <li class="px-5 nav-item">
+              <a href="./empezar.html" class="text-white">Empezar a aprender</a>
+            </li>
+            <li class="px-5 nav-item">
+              <a href="./index.html#contact" class="text-white">Contacto</a>
+            </li>
+            <li class="px-5 nav-item">
+              <a href="./listado2.html" class="text-white">Cursos</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="button-container flex px-5 flex-initial">
+          <button class="btn btn-secondary">
+            <a href="./registro.html" class="text-white">Iniciar sesión</a>
+          </button>
+          <button class="btn btn-primary">
+            <a href="./registro.html" class="visited">Comenzar</a>
+          </button>
+        </div>
+      </nav>
+      <!-- /nav bar -->
+      <!-- bg-nav fondo -->
+      <div class="bg-nav">
+        <div class="img-container"></div>
+      </div>
     </header>
 
-
-
     <div class="panel-items-contenedor">
-        <div class="headline-contenedor">
-            <h1 class="panel-control-headline">Modificar datos</h1>
-            <div class="admin-btn-contenedor">
-                <a href="panelControl.html" class="admin-btn">Volver al panel de control</a>
-            </div>
+      <div class="headline-contenedor">
+        <div class="headline">
+          <h1 class="panel-control-headline">Modificar datos</h1>
         </div>
-        <hr>
-        <div id="app">
-            <form @submit.prevent="obtenerProducto">
-                <label for="codigo">Código:</label>
-                <input type="text" v-model="codigo" required><br>
-                <div class="form-btn-contenedor">
-                    <button type="submit" class="form-btn">Modificar curso</button>
-                </div>
-            </form>
-            <div v-if="mostrarDatosProducto">
-                <form @submit.prevent="guardarCambios">
-                    <h2 class="form-title">Datos del Producto</h2>
-                    <label for="nombreModificar">Nombre:</label>
-                    <input type="text" id="nombreModificar" v-model="nombre" required><br>
-
-                    <label for="cuposModificar">Cupos:</label>
-                    <input type="number" id="cuposModificar" v-model="cupos" required><br>
-
-                    <label for="duracionModificar">Duración:</label>
-                    <input type="number" id="duracionModificar" v-model="duracion" required><br>
-
-                    <label for="precioModificar">Precio:</label>
-                    <input type="number" step="0.01" id="precioModificar" v-model="precio" required><br>
-
-                    <label for="imagen_rutaModificar">Ruta de imágen:</label>
-                    <input type="text" id="imagen_rutaModificar" v-model="imagen_ruta" required><br>
-                    <div class="form-btn-contenedor">
-                        <button type="submit" class="form-btn">Guardar Cambios</button>
-                        <a href="modificaciones.html" class="form-btn-cancel">Cancelar</a>
-                    </div>
-                </form>
-            </div>
+        <div class="admin-btn-contenedor">
+          <a href="panelControl.html" class="admin-btn"
+            >Volver al panel de control</a
+          >
         </div>
+      </div>
+      <hr class="divider-maEnd" />
+      <div id="app">
+        <form @submit.prevent="obtenerProducto" class="modificarCurso-form">
+          <label for="codigo">Código:</label>
+          <input type="text" v-model="codigo" required /><br />
+          <div class="form-btn-contenedor">
+            <button type="submit" class="form-btn">Modificar curso</button>
+          </div>
+        </form>
+        <div v-if="mostrarDatosProducto">
+          <form @submit.prevent="guardarCambios">
+            <h2 class="form-title">Datos del Producto</h2>
+            <label for="nombreModificar">Nombre:</label>
+            <input
+              type="text"
+              id="nombreModificar"
+              v-model="nombre"
+              required
+            /><br />
+
+            <label for="cuposModificar">Cupos:</label>
+            <input
+              type="number"
+              id="cuposModificar"
+              v-model="cupos"
+              required
+            /><br />
+
+            <label for="duracionModificar">Duración:</label>
+            <input
+              type="number"
+              id="duracionModificar"
+              v-model="duracion"
+              required
+            /><br />
+
+            <label for="precioModificar">Precio:</label>
+            <input
+              type="number"
+              step="0.01"
+              id="precioModificar"
+              v-model="precio"
+              required
+            /><br />
+
+            <label for="imagen_rutaModificar">Ruta de imágen:</label>
+            <input
+              type="text"
+              id="imagen_rutaModificar"
+              v-model="imagen_ruta"
+              required
+            /><br />
+            <div class="form-btn-contenedor">
+              <button type="submit" class="form-btn">Guardar Cambios</button>
+              <a href="modificaciones.html" class="form-btn-cancel">Cancelar</a>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-
 
     <!-- footer section -->
     <footer id="footer">
-        <div class="footer-wrapper">
-            <div class="principal">
-                <a href="#" class="font-bold px-5 logo">
-                    <img src="./assets/img/logo.svg" alt="logo">
-                </a>
+      <div class="footer-wrapper">
+        <div class="principal">
+          <a href="#" class="font-bold px-5 logo">
+            <img src="./assets/img/logo.svg" alt="logo" />
+          </a>
 
-                <div class="footer-nav">
-                    <ul class="items">
-                        <li class="item"><a href="./index.html#">Inicio</a></li>
-                        <li class="item"><a href="./empezar.html">Empezar a aprender</a></li>
-                        <li class="item"><a href="./index.html#contact">Contacto</a></li>
-                        <li class="item"><a href="./index.html#inicio">Términos y condiciones</a></li>
-                    </ul>
-                </div>
+          <div class="footer-nav">
+            <ul class="items">
+              <li class="item"><a href="./index.html#">Inicio</a></li>
+              <li class="item">
+                <a href="./empezar.html">Empezar a aprender</a>
+              </li>
+              <li class="item">
+                <a href="./listado2.html" class="text-white">Cursos</a>
+              </li>
+              <li class="item"><a href="./index.html#contact">Contacto</a></li>
+              <li class="item">
+                <a href="./index.html#inicio">Términos y condiciones</a>
+              </li>
+            </ul>
+          </div>
 
-                <div class="footer-icons">
-                    <i class="fa-brands fa-twitter icon"></i>
-                    <i class="fa-brands fa-tiktok icon"></i>
-                    <i class="fa-brands fa-youtube icon"></i>
-                </div>
-            </div>
-
-            <div class="secundario">
-                <hr>
-                <p>&copy 2023 +Code</p>
-            </div>
-
+          <div class="footer-icons">
+            <i class="fa-brands fa-twitter icon"></i>
+            <i class="fa-brands fa-tiktok icon"></i>
+            <i class="fa-brands fa-youtube icon"></i>
+          </div>
         </div>
+
+        <div class="secundario">
+          <hr />
+          <p>&copy 2023 +Code</p>
+        </div>
+      </div>
     </footer>
 
     <script src="https://unpkg.com/vue@next"></script>
     <script>
-        //const URL = "http://127.0.0.1:5000/"
-        const URL = "https://melapaza.pythonanywhere.com/"
+      //const URL = "http://127.0.0.1:5000/"
+      const URL = "https://melapaza.pythonanywhere.com/";
 
-        const app = Vue.createApp({
-            data() {
-                return {
-                    codigo: '',
-                    mostrarDatosProducto: false,
-                    nombre: '',
-                    cupos: '',
-                    duracion: '',
-                    precio: '',
-                    imagen_ruta: ''
+      const app = Vue.createApp({
+        data() {
+          return {
+            codigo: "",
+            mostrarDatosProducto: false,
+            nombre: "",
+            cupos: "",
+            duracion: "",
+            precio: "",
+            imagen_ruta: "",
+          };
+        },
+        methods: {
+          obtenerProducto() {
+            fetch(URL + "cursos/" + this.codigo)
+              .then((response) => {
+                if (response.ok) {
+                  return response.json();
+                } else {
+                  throw new Error("Error al obtener los datos del curso.");
                 }
-            },
-            methods: {
-                obtenerProducto() {
-                    fetch(URL + 'cursos/' + this.codigo)
-                        .then(response => {
-                            if (response.ok) {
-                                return response.json()
-                            } else {
-                                throw new Error('Error al obtener los datos del curso.')
-                            }
-                        })
-                        .then(data => {
-                            this.nombre = data.nombre
-                            this.cupos = data.cupos
-                            this.duracion = data.duracion
-                            this.precio = data.precio
-                            this.imagen_ruta = data.imagen_ruta
-                            this.mostrarDatosProducto = true
-                        })
-                        .catch(error => {
-                            alert('Error al obtener los datos del curso.')
-                        })
-                },
-                guardarCambios() {
-                    const curso = {
-                        codigo: this.codigo,
-                        nombre: this.nombre,
-                        cupos: this.cupos,
-                        duracion: this.duracion,
-                        precio: this.precio,
-                        imagen_ruta: this.imagen_ruta
-                    }
+              })
+              .then((data) => {
+                this.nombre = data.nombre;
+                this.cupos = data.cupos;
+                this.duracion = data.duracion;
+                this.precio = data.precio;
+                this.imagen_ruta = data.imagen_ruta;
+                this.mostrarDatosProducto = true;
+              })
+              .catch((error) => {
+                alert("Error al obtener los datos del curso.");
+              });
+          },
+          guardarCambios() {
+            const curso = {
+              codigo: this.codigo,
+              nombre: this.nombre,
+              cupos: this.cupos,
+              duracion: this.duracion,
+              precio: this.precio,
+              imagen_ruta: this.imagen_ruta,
+            };
 
-                    fetch(URL + 'cursos/' + this.codigo, {
-                        method: 'PUT',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(curso)
-                    })
-                        .then(response => {
-                            if (response.ok) {
-                                return response.json()
-                            } else {
-                                throw new Error('Error al guardar los cambios del curso.')
-                            }
-                        })
-                        .then(data => {
-                            alert('Cambios guardados correctamente.')
-                            location.reload()
-                        })
-                        .catch(error => {
-                            alert('Error al guardar los cambios del curso.')
-                        })
+            fetch(URL + "cursos/" + this.codigo, {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(curso),
+            })
+              .then((response) => {
+                if (response.ok) {
+                  return response.json();
+                } else {
+                  throw new Error("Error al guardar los cambios del curso.");
                 }
-            }
-        })
-        app.mount('#app')
+              })
+              .then((data) => {
+                alert("Cambios guardados correctamente.");
+                location.reload();
+              })
+              .catch((error) => {
+                alert("Error al guardar los cambios del curso.");
+              });
+          },
+        },
+      });
+      app.mount("#app");
     </script>
-</body>
-
+  </body>
 </html>

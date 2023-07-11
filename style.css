@@ -1044,7 +1044,9 @@ main #feature .feature-cards .card .card-text {
     height: 20px;
     margin-right: 10px;
 }
-
+.divider-maEnd {
+    margin-block-end: 2rem;
+}
 .divider {
     border: none;
     border-top: 1px solid #ccc;
@@ -1073,7 +1075,7 @@ main #feature .feature-cards .card .card-text {
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-block: 1rem .5rem;
     font-weight: bold;
     border: none;
 }
@@ -1477,6 +1479,7 @@ textarea {
 
 .form-btn-contenedor {
     align-self: flex-end;
+    margin-block-start: 1rem;
 }
 
 .form-btn {
@@ -1572,10 +1575,13 @@ input:focus {
     border-radius: 1rem;
 }
 
+.headline {
+    margin-block-end: 1rem;
+}
 .admin-btn-contenedor {
     float: right;
     margin-inline-end: 1rem;
-    margin-block-end: 2rem;
+    margin-block-end: 1rem;
 }
 
 .admin-btn {
@@ -1860,9 +1866,12 @@ input:focus {
     /* background-color: #0056b3; */
     margin: 0 auto;
     width: 60%;
+    height: 100vh;
     padding-block: 1rem;
 }
-
+.modificarCurso-form {
+    margin-block-start: 1rem;
+}
 .headline-contenedor {
     display: flex;
     align-items: center;

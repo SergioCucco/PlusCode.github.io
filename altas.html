@@ -1,121 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agregar cursos</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <!-- stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<body>
+  <body>
     <!-- @@@ header section @@@ -->
     <header class="header">
+      <!-- nav bar-->
+      <nav id="nav" class="flex">
+        <div class="sm-nav">
+          <a href="#" class="logo">
+            <img src="./assets/img/logo.svg" alt="+Code" />
+          </a>
 
-        <!-- nav bar-->
-        <nav id="nav" class="flex">
-            <div class="sm-nav">
-                <a href="#" class="logo">
-                    <img src="/assets/img/logo.svg" alt="+Code">
-                </a>
-
-                <div class="toggle-btn">
-                    <i class="fas fa-bars menu-bars" id="menu-bars"></i>
-                </div>
-            </div>
-            <div class="nav-items flex-grow collapse">
-                <ul class="flex px-10">
-                    <li class="px-5 nav-item"><a href="#hero" class="text-white">Inicio</a></li>
-                    <li class="px-5 nav-item"><a href="./empezar.html" class="text-white">Empezar a aprender</a>
-                    </li>
-                    <li class="px-5 nav-item"><a href="./index.html#contact" class="text-white">Contacto</a></li>
-                    <li class="px-5 nav-item"><a href="./listado2.html" class="text-white">Cursos</a></li>
-                </ul>
-            </div>
-
-            <div class="button-container flex px-5 flex-initial">
-                <button class="btn btn-secondary"><a href="./registro.html" class="text-white">Iniciar
-                        sesión</a></button>
-                <button class="btn btn-primary"><a href="./registro.html" class="visited">Comenzar</a></button>
-            </div>
-
-        </nav>
-        <!-- /nav bar -->
-        <!-- bg-nav fondo -->
-        <div class="bg-nav">
-            <div class="img-container">
-            </div>
+          <div class="toggle-btn">
+            <i class="fas fa-bars menu-bars" id="menu-bars"></i>
+          </div>
         </div>
+        <div class="nav-items flex-grow collapse">
+          <ul class="flex px-10">
+            <li class="px-5 nav-item">
+              <a href="./index.html#hero" class="text-white">Inicio</a>
+            </li>
+            <li class="px-5 nav-item">
+              <a href="./empezar.html" class="text-white">Empezar a aprender</a>
+            </li>
+            <li class="px-5 nav-item">
+              <a href="./index.html#contact" class="text-white">Contacto</a>
+            </li>
+            <li class="px-5 nav-item">
+              <a href="./listado2.html" class="text-white">Cursos</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="button-container flex px-5 flex-initial">
+          <button class="btn btn-secondary">
+            <a href="./registro.html" class="text-white">Iniciar sesión</a>
+          </button>
+          <button class="btn btn-primary">
+            <a href="./registro.html" class="visited">Comenzar</a>
+          </button>
+        </div>
+      </nav>
+      <!-- /nav bar -->
+      <!-- bg-nav fondo -->
+      <div class="bg-nav">
+        <div class="img-container"></div>
+      </div>
     </header>
 
-
-    
     <div class="panel-items-contenedor">
-        <div class="headline-contenedor">
-            <h1 class="panel-control-headline">Agregar cursos</h1>
-            <div class="admin-btn-contenedor">
-                <a href="panelControl.html" class="admin-btn">Volver al panel de control</a>
-            </div>
+      <div class="headline-contenedor">
+        <div class="headline">
+          <h1 class="panel-control-headline">Agregar cursos</h1>
         </div>
-        <hr>
-        <form id="formulario">
-            <label for="codigo">Código:</label>
-            <input type="text" id="codigo" name="codigo" required><br>
+        <div class="admin-btn-contenedor">
+          <a href="panelControl.html" class="admin-btn"
+            >Volver al panel de control</a
+          >
+        </div>
+      </div>
+      <hr class="divider-maEnd" />
+      <form id="formulario">
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" required /><br />
 
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required /><br />
 
-            <label for="cupos">Cupos:</label>
-            <input type="number" id="cupos" name="cupos" required><br>
+        <label for="cupos">Cupos:</label>
+        <input type="number" id="cupos" name="cupos" required /><br />
 
-            <label for="precio">Precio:</label>
-            <input type="number" step="0.01" id="precio" name="precio" required><br>
+        <label for="precio">Precio:</label>
+        <input
+          type="number"
+          step="0.01"
+          id="precio"
+          name="precio"
+          required
+        /><br />
 
-            <label for="duracion">Duracion:</label>
-            <input type="number" step="0.01" id="duracion" name="duracion" required><br>
+        <label for="duracion">Duracion:</label>
+        <input
+          type="number"
+          step="0.01"
+          id="duracion"
+          name="duracion"
+          required
+        /><br />
 
-            <label for="imagen_ruta">Ruta de imágen:</label>
-            <input type="text" id="imagen_ruta" name="imagen_ruta" required><br>
-            <div class="form-btn-contenedor">
-                <button type="submit" class="form-btn">Agregar Curso</button>
-            </div>
-        </form>
-        <br><br>
+        <label for="imagen_ruta">Ruta de imágen:</label>
+        <input type="text" id="imagen_ruta" name="imagen_ruta" required /><br />
+        <div class="form-btn-contenedor">
+          <button type="submit" class="form-btn">Agregar Curso</button>
+        </div>
+      </form>
+      <br /><br />
     </div>
 
-        <!-- footer section -->
-        <footer id="footer">
-            <div class="footer-wrapper">
-                <div class="principal">
-                    <a href="#" class="font-bold px-5 logo">
-                        <img src="./assets/img/logo.svg" alt="logo">
-                    </a>
-    
-                    <div class="footer-nav">
-                        <ul class="items">
-                            <li class="item"><a href="./index.html#">Inicio</a></li>
-                            <li class="item"><a href="./empezar.html">Empezar a aprender</a></li>
-                            <li class="item"><a href="./index.html#contact">Contacto</a></li>
-                            <li class="item"><a href="./index.html#inicio">Términos y condiciones</a></li>
-                        </ul>
-                    </div>
-    
-                    <div class="footer-icons">
-                        <i class="fa-brands fa-twitter icon"></i>
-                        <i class="fa-brands fa-tiktok icon"></i>
-                        <i class="fa-brands fa-youtube icon"></i>
-                    </div>
-                </div>
-    
-                <div class="secundario">
-                    <hr>
-                    <p>&copy 2023 +Code</p>
-                </div>
-    
-            </div>
-        </footer>
-        <!-- /footer section -->
-    <script src="./main.js"></script>
-</body>
+    <!-- footer section -->
+    <footer id="footer">
+      <div class="footer-wrapper">
+        <div class="principal">
+          <a href="#" class="font-bold px-5 logo">
+            <img src="./assets/img/logo.svg" alt="logo" />
+          </a>
 
+          <div class="footer-nav">
+            <ul class="items">
+              <li class="item"><a href="./index.html#">Inicio</a></li>
+              <li class="item">
+                <a href="./empezar.html">Empezar a aprender</a>
+              </li>
+              <li class="item"><a href="./index.html#contact">Contacto</a></li>
+              <li class="item">
+                <a href="./listado2.html" class="text-white">Cursos</a>
+              </li>
+              <li class="item">
+                <a href="./index.html#inicio">Términos y condiciones</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-icons">
+            <i class="fa-brands fa-twitter icon"></i>
+            <i class="fa-brands fa-tiktok icon"></i>
+            <i class="fa-brands fa-youtube icon"></i>
+          </div>
+        </div>
+
+        <div class="secundario">
+          <hr />
+          <p>&copy 2023 +Code</p>
+        </div>
+      </div>
+    </footer>
+    <!-- /footer section -->
+
+    <script>
+      const URL = "https://melapaza.pythonanywhere.com/";
+
+      // =========== ALTAS ===========
+      // Capturamos el evento del envío del formulario
+      document
+        .getElementById("formulario")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); //Evita que se recargue la página
+
+          // Obtenemos los valores del formulario
+          var codigo = document.getElementById("codigo").value;
+          var nombre = document.getElementById("nombre").value;
+          var cupos = document.getElementById("cupos").value;
+          var precio = document.getElementById("precio").value;
+          var duracion = document.getElementById("duracion").value;
+          var imagen_ruta = document.getElementById("imagen_ruta").value;
+
+          // Creamos un objetos con los datos del producto
+          var curso = {
+            codigo: codigo,
+            nombre: nombre,
+            cupos: cupos,
+            precio: precio,
+            duracion: duracion,
+            imagen_ruta: imagen_ruta,
+          };
+          console.log(curso);
+
+          // Realizamos la solicitud POST al servidor
+          fetch(URL + "cursos", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(curso),
+          })
+            .then(function (response) {
+              if (response.ok) {
+                return response.json(); // Parseamos la respuesta JSON
+              } else {
+                throw new Error("Error al agregar el curso.");
+              }
+            })
+            .then(function (data) {
+              alert("Curso agregado correctamente.");
+              document.getElementById("codigo").value = "";
+              document.getElementById("nombre").value = "";
+              document.getElementById("cupos").value = "";
+              document.getElementById("precio").value = "";
+              document.getElementById("duracion").value = "";
+              document.getElementById("imagen_ruta").value = "";
+            })
+            .catch(function (error) {
+              console.log("Error:", error);
+              alert("Error al agregar el curso.");
+            });
+        });
+    </script>
+  </body>
 </html>

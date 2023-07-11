@@ -1,180 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Listado de Cursos</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <!-- stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<body>
+  <body>
     <!-- @@@ header section @@@ -->
     <header class="header">
+      <!-- nav bar-->
+      <nav id="nav" class="flex">
+        <div class="sm-nav">
+          <a href="#" class="logo">
+            <img src="./assets/img/logo.svg" alt="+Code" />
+          </a>
 
-        <!-- nav bar-->
-        <nav id="nav" class="flex">
-            <div class="sm-nav">
-                <a href="#" class="logo">
-                    <img src="/assets/img/logo.svg" alt="+Code">
-                </a>
-
-                <div class="toggle-btn">
-                    <i class="fas fa-bars menu-bars" id="menu-bars"></i>
-                </div>
-            </div>
-            <div class="nav-items flex-grow collapse">
-                <ul class="flex px-10">
-                    <li class="px-5 nav-item"><a href="#hero" class="text-white">Inicio</a></li>
-                    <li class="px-5 nav-item"><a href="./empezar.html" class="text-white">Empezar a aprender</a>
-                    </li>
-                    <li class="px-5 nav-item"><a href="./index.html#contact" class="text-white">Contacto</a></li>
-                    <li class="px-5 nav-item"><a href="./listado2.html" class="text-white">Cursos</a></li>
-                </ul>
-            </div>
-
-            <div class="button-container flex px-5 flex-initial">
-                <button class="btn btn-secondary"><a href="./registro.html" class="text-white">Iniciar
-                        sesión</a></button>
-                <button class="btn btn-primary"><a href="./registro.html" class="visited">Comenzar</a></button>
-            </div>
-
-        </nav>
-        <!-- /nav bar -->
-        <!-- bg-nav fondo -->
-        <div class="bg-nav">
-            <div class="img-container">
-            </div>
+          <div class="toggle-btn">
+            <i class="fas fa-bars menu-bars" id="menu-bars"></i>
+          </div>
         </div>
+        <div class="nav-items flex-grow collapse">
+          <ul class="flex px-10">
+            <li class="px-5 nav-item">
+              <a href="#hero" class="text-white">Inicio</a>
+            </li>
+            <li class="px-5 nav-item">
+              <a href="./empezar.html" class="text-white">Empezar a aprender</a>
+            </li>
+            <li class="px-5 nav-item">
+              <a href="./index.html#contact" class="text-white">Contacto</a>
+            </li>
+            <li class="px-5 nav-item">
+              <a href="./listado2.html" class="text-white">Cursos</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="button-container flex px-5 flex-initial">
+          <button class="btn btn-secondary">
+            <a href="./registro.html" class="text-white">Iniciar sesión</a>
+          </button>
+          <button class="btn btn-primary">
+            <a href="./registro.html" class="visited">Comenzar</a>
+          </button>
+        </div>
+      </nav>
+      <!-- /nav bar -->
+      <!-- bg-nav fondo -->
+      <div class="bg-nav">
+        <div class="img-container"></div>
+      </div>
     </header>
 
-
-
     <div class="panel-items-contenedor">
-        <div class="headline-contenedor">
-            <h1 class="panel-control-headline">Eliminar curso</h1>
-            <div class="admin-btn-contenedor">
-                <a href="panelControl.html" class="admin-btn">Volver al panel de control</a>
-            </div>
+      <div class="headline-contenedor">
+        <div class="headline">
+        <h1 class="panel-control-headline">Eliminar curso</h1>
+      </div>
+        <div class="admin-btn-contenedor">
+          <a href="panelControl.html" class="admin-btn"
+            >Volver al panel de control</a
+          >
         </div>
-        <table class="eliminar-curso-contenedor">
-            <hr>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Cupos</th>
-                    <th>Duración</th>
-                    <th>Precio</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="curso in cursos" class="text-accent">
-                    <td><img :src="curso.imagen_ruta" alt="Imagen del curso" class="img-listado"></td>
-                    <td>{{ curso.codigo }}</td>
-                    <td>{{ curso.nombre }}</td>
-                    <td>{{ curso.cupos }}</td>
-                    <td>{{ curso.duracion }} meses</td>
-                    <td>${{ curso.precio }}</td>
-                    <td><button @click="eliminarCurso(curso.codigo)" class="form-btn-cancel">Eliminar</button></td>
-                </tr>
-            </tbody>
-        </table>
+      </div>
+      <table class="eliminar-curso-contenedor">
+        <hr class="divider-maEnd" />
+        <thead>
+          <tr>
+            <th></th>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Cupos</th>
+            <th>Duración</th>
+            <th>Precio</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="curso in cursos" class="text-accent">
+            <td>
+              <img
+                :src="curso.imagen_ruta"
+                alt="Imagen del curso"
+                class="img-listado"
+              />
+            </td>
+            <td>{{ curso.codigo }}</td>
+            <td>{{ curso.nombre }}</td>
+            <td>{{ curso.cupos }}</td>
+            <td>{{ curso.duracion }} meses</td>
+            <td>${{ curso.precio }}</td>
+            <td>
+              <button
+                @click="eliminarCurso(curso.codigo)"
+                class="form-btn-cancel"
+              >
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- footer section -->
     <footer id="footer">
-        <div class="footer-wrapper">
-            <div class="principal">
-                <a href="#" class="font-bold px-5 logo">
-                    <img src="./assets/img/logo.svg" alt="logo">
-                </a>
+      <div class="footer-wrapper">
+        <div class="principal">
+          <a href="#" class="font-bold px-5 logo">
+            <img src="./assets/img/logo.svg" alt="logo" />
+          </a>
 
-                <div class="footer-nav">
-                    <ul class="items">
-                        <li class="item"><a href="#">Inicio</a></li>
-                        <li class="item"><a href="./empezar.html">Empezar a aprender</a></li>
-                        <li class="item"><a href="#contact">Contacto</a></li>
-                        <li class="item"><a href="#inicio">Términos y condiciones</a></li>
-                    </ul>
-                </div>
+          <div class="footer-nav">
+            <ul class="items">
+              <li class="item"><a href="#">Inicio</a></li>
+              <li class="item">
+                <a href="./empezar.html">Empezar a aprender</a>
+              </li>
+              <li class="item"><a href="./index.html#contact">Contacto</a></li>
+              <li class="item">
+                <a href="./listado2.html" class="text-white">Cursos</a>
+            </li>
+              <li class="item"><a href="#inicio">Términos y condiciones</a></li>
+            </ul>
+          </div>
 
-                <div class="footer-icons">
-                    <i class="fa-brands fa-twitter icon"></i>
-                    <i class="fa-brands fa-tiktok icon"></i>
-                    <i class="fa-brands fa-youtube icon"></i>
-                </div>
-            </div>
-
-            <div class="secundario">
-                <hr>
-                <p>&copy 2023 +Code</p>
-            </div>
-
+          <div class="footer-icons">
+            <i class="fa-brands fa-twitter icon"></i>
+            <i class="fa-brands fa-tiktok icon"></i>
+            <i class="fa-brands fa-youtube icon"></i>
+          </div>
         </div>
+
+        <div class="secundario">
+          <hr />
+          <p>&copy 2023 +Code</p>
+        </div>
+      </div>
     </footer>
     <!-- /footer section -->
 
-
     <script src="https://unpkg.com/vue@next"></script>
     <script>
-        const app = Vue.createApp({
-            data() {
-                return {
-                    cursos: []
-                }
-            },
-            methods: {
-                obtenerCursos() {
-                    const URL = "https://melapaza.pythonanywhere.com/"
+      const app = Vue.createApp({
+        data() {
+          return {
+            cursos: [],
+          };
+        },
+        methods: {
+          obtenerCursos() {
+            const URL = "https://melapaza.pythonanywhere.com/";
 
-                    fetch(URL + 'cursos')
-                        .then(response => {
-                            if (response.ok) {
-                                return response.json()
-                            } else {
-                                throw new Error('Error al obtener los cursos.')
-                            }
-                        })
-                        .then(data => {
-                            // this.cursos = data
-                            this.cursos = data.map(curso => {
-                                curso.imagen_ruta = curso.imagen_ruta;
-                                curso.precio = new Intl.NumberFormat('es-AR').format(curso.precio);
-                                return curso;
-                            });
-                        })
-                        .catch(error => {
-                            console.log('Error:', error)
-                            alert('Error al obtener los cursos.')
-                        })
-                },
-                eliminarCurso(codigo) {
-                    const URL = "https://melapaza.pythonanywhere.com/"
-
-                    fetch(URL + `cursos/${codigo}`, { method: 'DELETE' })
-                        .then(response => {
-                            if (response.ok) {
-                                // Eliminar el curso de la lista después de eliminarlo en el servidor
-                                this.cursos = this.cursos.filter(curso => curso.codigo !== codigo)
-                                console.log('Curso eliminado correctamente.')
-                            }
-                        })
-                        .catch(error => {
-                            console.log('Error:', error)
-                            alert('Error al eliminar el curso.')
-                        })
+            fetch(URL + "cursos")
+              .then((response) => {
+                if (response.ok) {
+                  return response.json();
+                } else {
+                  throw new Error("Error al obtener los cursos.");
                 }
-            },
-            mounted() {
-                this.obtenerCursos()
-            }
-        })
-        app.mount('body')
+              })
+              .then((data) => {
+                // this.cursos = data
+                this.cursos = data.map((curso) => {
+                  curso.imagen_ruta = curso.imagen_ruta;
+                  curso.precio = new Intl.NumberFormat("es-AR").format(
+                    curso.precio
+                  );
+                  return curso;
+                });
+              })
+              .catch((error) => {
+                console.log("Error:", error);
+                alert("Error al obtener los cursos.");
+              });
+          },
+          eliminarCurso(codigo) {
+            const URL = "https://melapaza.pythonanywhere.com/";
+
+            fetch(URL + `cursos/${codigo}`, { method: "DELETE" })
+              .then((response) => {
+                if (response.ok) {
+                  // Eliminar el curso de la lista después de eliminarlo en el servidor
+                  this.cursos = this.cursos.filter(
+                    (curso) => curso.codigo !== codigo
+                  );
+                  console.log("Curso eliminado correctamente.");
+                }
+              })
+              .catch((error) => {
+                console.log("Error:", error);
+                alert("Error al eliminar el curso.");
+              });
+          },
+        },
+        mounted() {
+          this.obtenerCursos();
+        },
+      });
+      app.mount("body");
     </script>
-</body>
-
+  </body>
 </html>
