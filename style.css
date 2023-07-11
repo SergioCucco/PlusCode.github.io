@@ -1472,7 +1472,7 @@ textarea {
 
 .form-title {
     margin-inline-start: 8px;
-    margin-block-end: 1rem;
+    margin-block: 1rem;
     color: var(--dark-primary-color);
     font-weight: 800;
 }
@@ -1866,7 +1866,7 @@ input:focus {
     /* background-color: #0056b3; */
     margin: 0 auto;
     width: 60%;
-    height: 100vh;
+    height: 100%;
     padding-block: 1rem;
 }
 .modificarCurso-form {
