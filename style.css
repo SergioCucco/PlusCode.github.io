@@ -886,6 +886,18 @@ main #feature .feature-cards .card .card-text {
 /* ---------- /contact section Style ---------- */
 
 /* ---------- footer section Style ---------- */
+    /* Estos 3 estilos son para modificaciones.html */
+.body-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.content {
+    flex-grow: 1;
+}
+.sticky-footer {
+    flex-shrink: 0;
+}
 
 #footer {
     background-color: #513370;
